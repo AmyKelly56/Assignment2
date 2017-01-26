@@ -1,6 +1,14 @@
 PFont f1;
+ArrayList<Actions> action;
 
 MainMenu menu;
+TaxiCar taxi;
+City city1;
+City city2;
+City city3;
+City city4;
+City city5;
+City city6;
 
 int SIZE = 45;
 
@@ -11,7 +19,7 @@ void setup()
   fullScreen();
   background(#86E4FF);
   
-  f1 = loadFont("Herculanum-48.vlw");
+  f1 = loadFont("SansSerif-48.vlw");
   textFont(f1);
   
    menu = new MainMenu();
@@ -19,6 +27,27 @@ void setup()
   {
     clouds[i] = new Clouds();
   }
+  
+  //Game Objects 
+  action = new ArrayList<Actions>();
+  taxi = new TaxiCar();
+  city1= new City(width/4, height/4);
+  city2 = new  City( );
+  city3 = new City ();
+  city4 = new City();
+  city5 = new City();
+  city6 = new City();
+  
+  
+  
+  action.add(taxi);
+  action.add(city1);
+  action.add(city2);
+  action.add(city3);
+  action.add(city4);
+  action.add(city5);
+  action.add(city6);
+
   
 }
   
@@ -37,13 +66,14 @@ void draw()
     menu.update();
     menu.instrctions();
   }
+
   
   //header.expandHeader();
   //textSize(40);
   //fill(32);
   
 }
-
+ 
 void keyPressed()
 {
   if (key == ' ')
@@ -86,6 +116,17 @@ void keyPressed()
       taxi.speed = 100;
       taxi.fast = false;
     }
-  }
+  }  
 }
+
+void keyReleased()
+{
+  if (keyCode == LEFT || key == 'a')
+  {
+    taxi.left = false;
+  }
+  if (keyCode == RIGHT || key == 'd')
+  {
+    taxi.right = false;
+  }
 }
