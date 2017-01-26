@@ -32,11 +32,11 @@ void setup()
   action = new ArrayList<Actions>();
   taxi = new TaxiCar();
   city1= new City(width/4, height/4);
-  city2 = new  City( );
-  city3 = new City ();
-  city4 = new City();
-  city5 = new City();
-  city6 = new City();
+  //city2 = new  City( );
+  //city3 = new City ();
+  //city4 = new City();
+  //city5 = new City();
+  //city6 = new City();
   
   
   
@@ -63,15 +63,21 @@ void draw()
     }
     
     menu.logo();
-    menu.update();
+   menu.update();
     menu.instrctions();
   }
+  
+  if (taxi.working == false)
+  {
+    action.remove(taxi);
+    action.remove(city1);
+    action.remove(city2);
+    action.remove(city3);
+    action.remove(city4);
+    action.remove(city5);
+    action.remove(city6);
+  }
 
-  
-  //header.expandHeader();
-  //textSize(40);
-  //fill(32);
-  
 }
  
 void keyPressed()

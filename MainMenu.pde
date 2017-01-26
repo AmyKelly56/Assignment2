@@ -9,13 +9,14 @@ class MainMenu
     textFont(f1);
     textSize(66);
     text("Taxi Pick Up", width/2 - 135, y);
+    noFill();
   }
   
   void update()
   {
     if (y < 170)
     {
-      y += 5.0;
+      y +=  5.0;
     }
   }
   

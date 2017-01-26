@@ -9,9 +9,9 @@ class City extends Actions
   {
     fill(#5D471B);
     rect(350, 180, 300, 200);
-    rect();
-    rect();
-    rect();
+    //rect();
+    //rect();
+    //rect();
      
   }
   
