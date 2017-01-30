@@ -24,7 +24,7 @@ class Actions
   {
   }
   
-  void hitDetection()
+  void crash()
   {
     
   }
@@ -33,7 +33,19 @@ class Actions
   {
     position.x = (random(4, 994));
     position.y = (random(4, 560));
-    //if (((position.y < 100) || position.x > topLeft.position.x- 168 && position.y < topLeft.position.y +100 && position.x < topLeft.position.x + 168 && position.y > topLeft.position.y - 68) || (position.x > topRight.position.x- 168 && position.y < topRight.position.y +100 && position.x < topRight.position.x + 168 && position.y > topRight.position.y - 68)|| (position.x > bottomRight.position.x- 168 && position.y < bottomRight.position.y +100 && position.x < bottomRight.position.x + 168 && position.y > bottomRight.position.y - 68)||(position.x > bottomLeft.position.x- 168 && position.y < bottomLeft.position.y +100 && position.x < bottomLeft.position.x + 168 && position.y > bottomLeft.position.y - 68))
+    if (((position.y < 100) || position.x > city1.position.x- 168 
+          && position.y < city1.position.y +100 
+          && position.x < city1.position.x + 168 
+          && position.y > city1.position.y - 68) || (position.x > city2.position.x- 168 
+          && position.y < city2.position.y +100 
+          && position.x < city2.position.x + 168 
+          && position.y > city2.position.y - 68) || (position.x > city3.position.x- 168 
+          && position.y < city3.position.y +100 
+          && position.x < city3.position.x + 168 
+          && position.y > city3.position.y - 68) ||(position.x > city4.position.x- 168 
+          && position.y < city4.position.y +100 
+          && position.x < city4.position.x + 168 
+          && position.y > city4.position.y - 68))
     {
        randomise(); 
     }     

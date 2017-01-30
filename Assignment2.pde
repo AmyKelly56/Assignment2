@@ -7,8 +7,6 @@ City city1;
 City city2;
 City city3;
 City city4;
-City city5;
-City city6;
 
 int SIZE = 45;
 
@@ -25,28 +23,23 @@ void setup()
   
   //Game Objects 
   action = new ArrayList<Actions>();
+  
   taxi = new TaxiCar();
-  
-  
+ 
   city1= new City(width/4, height/4);
-  //city2 = new  City( );
-  //city3 = new City ();
-  //city4 = new City();
-  //city5 = new City();
-  //city6 = new City();
-  
-  
+  city2 = new  City(width - width/4 - 15, height - height/4 - 30);
+  city3 = new City(width/4 + 5, height - height/4 - 30);
+  city4 = new City(width - width/4 - 15, height/4 + 70);
+
   
   action.add(taxi);
   action.add(city1);
   action.add(city2);
   action.add(city3);
   action.add(city4);
-  action.add(city5);
-  action.add(city6);
-
   
 }
+
   
 void draw()
 {
@@ -56,6 +49,13 @@ void draw()
    menu.instrctions();
   }
   
+  for (Actions a : action)
+  {
+    a.draw();
+    a.update();
+    a.checkSides();
+  }
+    
   if (taxi.working == false)
   {
     action.remove(taxi);
@@ -63,15 +63,12 @@ void draw()
     action.remove(city2);
     action.remove(city3);
     action.remove(city4);
-    action.remove(city5);
-    action.remove(city6);
   }
-
 }
  
 void keyPressed()
 {
-  if (key == ' ')
+  if (key == 'b')
   {
     if (menu.game == false)
     {

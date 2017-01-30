@@ -43,4 +43,12 @@ class City extends Actions
       x -= 10;
     }
   }
+  
+  void crash()
+  {
+    if (taxi.position.x > position.x - 159 && taxi.position.y < position.y + 93 && taxi.position.x < position.x + 159 && taxi.position.y > position.y - 59)
+    {
+      taxi.working = false;
+    }
+  }
 }
