@@ -30,4 +30,41 @@ class TaxiCar extends Actions
     popMatrix();
   }
   
+  void update()
+  {
+    if (left == true)
+    {
+      theta += 0.04;
+    }
+    if (right == true)
+    {
+      theta -= 0.04;
+    }
+    
+    velocity.x = cos(-theta);
+    velocity.y = sin(-theta);
+    position.x += velocity.x * timeDelta * speed;
+    position.y += velocity.y * timeDelta * speed;
+    velocity.limit(1.5);
+  }
+  
+  void checkSides()
+  {
+    if (position.y > height)
+    {
+      position.y = 110;
+    }
+    if (position.y < 110)
+    {
+      position.y = height;
+    }
+    if (position.x < 0)
+    {
+      position.x = width;
+    }
+    if (position.x > width)
+    {
+      position.x = 0;
+    }
+  } 
 }
