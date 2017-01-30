@@ -7,6 +7,16 @@ City city1;
 City city2;
 City city3;
 City city4;
+Traffic car1;
+Traffic car2;
+Traffic car3;
+Traffic car4; 
+Traffic car5;
+Traffic car6;
+Traffic car7;
+Traffic car8;
+Traffic car9; 
+Traffic car10;
 
 int SIZE = 45;
 
@@ -30,6 +40,17 @@ void setup()
   city2 = new  City(width - width/4 - 15, height - height/4 - 30);
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
+  
+  car1 = new Traffic();
+  car2 = new Traffic();
+  car3 = new Traffic();
+  car4 = new Traffic();
+  car5 = new Traffic();
+  car6 = new Traffic();
+  car7 = new Traffic();
+  car8 = new Traffic();
+  car9 = new Traffic();
+  car10 = new Traffic();
 
   
   action.add(taxi);
@@ -37,7 +58,16 @@ void setup()
   action.add(city2);
   action.add(city3);
   action.add(city4);
-  
+  action.add(car1);
+  action.add(car2);
+  action.add(car3);
+  action.add(car4);
+  action.add(car5);
+  action.add(car6);
+  action.add(car7);
+  action.add(car8);
+  action.add(car9);
+  action.add(car10);
 }
 
   
