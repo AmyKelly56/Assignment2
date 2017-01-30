@@ -12,7 +12,6 @@ City city6;
 
 int SIZE = 45;
 
-Clouds clouds[] = new Clouds[SIZE];
 
 void setup()
 {
@@ -54,17 +53,10 @@ void setup()
 void draw()
 {
   if (menu.game == false)
-  {
-    for (int i = 0; i < SIZE; i++)
-    {
-      clouds[i].draw();
-      clouds[i].update();
-      clouds[i].checkSides();
-    }
-    
-    menu.logo();
+  { 
+   menu.logo();
    menu.update();
-    menu.instrctions();
+   menu.instrctions();
   }
   
   if (taxi.working == false)
