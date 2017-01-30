@@ -30,5 +30,4 @@ class TaxiCar extends Actions
     popMatrix();
   }
   
-  
 }

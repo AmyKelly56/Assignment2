@@ -22,14 +22,12 @@ void setup()
   textFont(f1);
   
    menu = new MainMenu();
-  for (int i = 0; i < SIZE; i ++)
-  {
-    clouds[i] = new Clouds();
-  }
   
   //Game Objects 
   action = new ArrayList<Actions>();
   taxi = new TaxiCar();
+  
+  
   city1= new City(width/4, height/4);
   //city2 = new  City( );
   //city3 = new City ();
@@ -55,7 +53,6 @@ void draw()
   if (menu.game == false)
   { 
    menu.logo();
-   menu.update();
    menu.instrctions();
   }
   

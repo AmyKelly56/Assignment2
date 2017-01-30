@@ -8,11 +8,39 @@ class City extends Actions
   void draw()
   {
     fill(#5D471B);
-    rect(350, 180, 300, 200);
-    //rect();
-    //rect();
-    //rect();
-     
+    strokeWeight(0);
+    //road
+    rect(position.x, position.y + 23, 325, 150);
+    stroke(100);
+    fill(80);
+    rect(position.x - 11, position.y + 16, 300, 130);
+    strokeWeight(2);
+    stroke(255);
+    fill(#F0D01D);
+    rect(position.x, position.y, 300, 100);
+    stroke(0);
+    strokeWeight(2);
+    fill(#2625BF);
+    rect(position.x, position.y + 65, 300, 30);
+    strokeWeight(0);
+    rect(position.x + 1, position.y + 50, 300, 3);
+    stroke(150);
+    fill(90);
+    rect(position.x + 147, position.y + 1, 6, 96);
+    stroke(0);
+    fill(100);
+    rect(position.x, position.y + 100, 324, 1);
+    
+    int x = 145;
+    int y = 58;
+    
+    for (int i = 0; i < 30; i++)
+    {
+      strokeWeight(1);
+      fill(255);
+      rect(position.x - x, position.y + y, 4, 8);
+      rect(position.x - x, position.y + y + 12, 3, 7);
+      x -= 10;
+    }
   }
-  
 }
