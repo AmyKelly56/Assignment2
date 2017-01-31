@@ -1,7 +1,9 @@
 class Traffic extends Actions
 {
+  
   int p =0;
   int x, y;
+  float r, g, b;
   float distance; 
   
   Traffic()
@@ -19,5 +21,6 @@ class Traffic extends Actions
     
     popMatrix();
   }
+  
   
   
