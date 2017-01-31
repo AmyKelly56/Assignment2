@@ -1,5 +1,6 @@
 PFont f1;
 ArrayList<Actions> action;
+ArrayList<Customer> customer_destination;
 
 MainMenu menu;
 TaxiCar taxi;
@@ -7,6 +8,7 @@ City city1;
 City city2;
 City city3;
 City city4;
+Customer customers;
 /*Traffic car1;
 Traffic car2;
 Traffic car3;
@@ -23,18 +25,19 @@ int SIZE = 45;
 
 void setup()
 {
+  fullScreen();
   background(#86E4FF);
   
   f1 = loadFont("SansSerif-48.vlw");
   textFont(f1);
   
    menu = new MainMenu();
+   
+   customers = new Customer();
   
-  //Game Objects 
+  
   action = new ArrayList<Actions>();
-  
   taxi = new TaxiCar();
- 
   city1= new City(width/4, height/4);
   city2 = new  City(width - width/4 - 15, height - height/4 - 30);
   city3 = new City(width/4 + 5, height - height/4 - 30);
@@ -78,6 +81,16 @@ void draw()
   { 
    menu.logo();
    menu.instrctions();
+  }
+  else if (menu.game == true)
+  {
+    //
+    if (customers.startGame == true)
+    {
+      customers.randomise();
+      customers.startGame = false;
+    }
+    
   }
   
   for (Actions a : action)
