@@ -9,6 +9,7 @@ City city2;
 City city3;
 City city4;
 Customer customers;
+Destination location;
 /*Traffic car1;
 Traffic car2;
 Traffic car3;
@@ -92,6 +93,22 @@ void draw()
       customers.randomise();
       customers.startGame = false;
     }
+    
+    background(#646362);
+    
+    for(Customer c : customer_destination)
+    {
+      c.draw();
+      c.crash();
+      
+      if (c.collected == true)
+      {
+        if (c.customer_destination == true)
+        {
+          location.randomise();
+          customer_deatination.add(location);
+        }
+        
     
   }
   

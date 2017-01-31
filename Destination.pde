@@ -13,3 +13,26 @@ class Destination extends Customer
     strokeWeight(1);
   }
   
+  void crash()
+  {
+    if (taxi.position.x > position.x - 20 
+    && taxi.position.y < position.y + 38 
+    && taxi.position.x < position.x + 23 
+    && taxi.position.y > position.y - 21)
+    
+    {
+      collected = true;
+      
+      if (customer_destination ==true)
+      {
+        customer_destination = false;
+        customers.customer_destination = false;
+      }
+      else
+      {
+        customer_destination = true;
+        customers.customer_destination = true;
+      }
+    }
+  }
+}
