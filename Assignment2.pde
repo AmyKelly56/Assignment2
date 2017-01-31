@@ -26,14 +26,12 @@ int SIZE = 45;
 void setup()
 {
   fullScreen();
-  background(#FA5503);
   f1 = loadFont("SansSerif-48.vlw");
   textFont(f1);
   
-   menu = new MainMenu();
+  menu = new MainMenu();
    
-   customers = new Customer();
-  
+  customers = new Customer();
   
   action = new ArrayList<Actions>();
   taxi = new TaxiCar();
@@ -77,28 +75,8 @@ void setup()
 void draw()
 {
   
-  fill(49, 128, 205);
-  rect(0, 75, 2570, 150);
-  
-  fill(57, 143, 216);
-  rect(0, 220, 2570, 150);
-  
-  //fill(78, 162, 226);
-  //rect(0, 399, 2570, 200);
-  
-  //fill(99, 175, 227);
-  //rect(0, 599, 2570, 200);
-
- // fill(126, 189, 230);
-  //rect(0, 799, 2570, 200);
-
-  //fill(163, 200, 229);
-  //rect(0, 999, 2570, 250);
-
-  //fill(208, 234, 254);
- //rect(0, 500, 1400, 500);
-  
-  
+  background(#FA5503);
+ 
   //Game Menu
   if (menu.game == false)
   { 
