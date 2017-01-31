@@ -2,6 +2,7 @@ class Customer extends Actions
 {
   boolean collected = false;
   boolean startGame = true;
+  boolean customer_destination = false;
   
   Customer()
   {
@@ -27,6 +28,28 @@ class Customer extends Actions
     fill(0);
     textFont(f1, 10);
     text("TAXI!", position.x+5, position.y - 15, 30); 
+  }
+  
+  void crash()
+  {
+    if (taxi.position.x > position.x - 20 
+    && taxi.position.y < position.y + 38 
+    && taxi.position.x < position.x + 23 
+    && taxi.position.y > position.y - 21)
+    
+    {
+      collected = true;
+      
+      if (customer_destination == true)
+      {
+        customer_destination = false;
+        
+      }
+      else
+      {
+        customer_destination = true;
+      }
+    }
   }
 }
 
