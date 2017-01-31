@@ -79,9 +79,10 @@ void draw()
  
   //Game Menu
   if (menu.game == false)
-  { 
-   menu.logo();
-   menu.instrctions();
+  {
+    menu.logo();
+    menu.update();
+    menu.instrctions();
   }
   else if (menu.game == true)
   {
@@ -113,7 +114,7 @@ void draw()
  
 void keyPressed()
 {
-  if (key == 'b')
+  if (key == ' ')
   {
     if (menu.game == false)
     {
