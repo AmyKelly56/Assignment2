@@ -28,7 +28,7 @@ class MainMenu
   {
     if (y > 170)
     {
-       textFont(f1);
+       textFont(f2);
        textSize(21);
        fill(0);
        text("Use Arrow Keys or A, W, S, D To Move The Taxi", width/2 - 200, height/2 - 100);

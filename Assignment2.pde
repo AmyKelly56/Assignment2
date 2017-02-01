@@ -1,4 +1,4 @@
-PFont f1;
+PFont f1,f2;
 ArrayList<Actions> action;
 ArrayList<Customer> customer_destination;
 
@@ -28,7 +28,8 @@ int SIZE = 45;
 void setup()
 {
   fullScreen();
-  f1 = loadFont("SansSerif-48.vlw");
+  f1 = loadFont("freeversionSketchBlock-Bold-48.vlw");
+  f2 = loadFont("orangejuice-48.vlw");
   textFont(f1);
   
   menu = new MainMenu();

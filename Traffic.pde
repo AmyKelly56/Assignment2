@@ -41,6 +41,45 @@ class Traffic extends Actions
     rect(0 + 8, 0 - 8, 10, 3);
     popMatrix();
   }
+  
+  void update()
+  {
+    location = new PVector(points[p].points.x, points[p].points.y);
+    velocity = PVector.sub(location, position);
+    velocity.normalize();
+    position.add(PVector.mult(velocity, speed * timeDelta));
+    
+    position.x += velocity.x * timeDelta *speed;
+    position.y += velocity.y * timeDelta * speed;
+    velocity.limit(1.5);
+    
+    x = (int)position.x;
+    y = (int)position.y;
+    
+    if (x == points[p].points.x)
+    {
+      saveX = true;
+    }
+    if (y == points[p].points.y)
+    {
+      saveY = true;
+    }
+    if (saveX == true && saveY == true)
+    {
+      if (p == 4)
+      {
+        p = 0;
+      }
+      else
+      {
+        p++;
+      }
+      saveX = false;
+      saveY = false;
+    }
+  }
+  
+}
  
   
 
