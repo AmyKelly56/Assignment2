@@ -33,6 +33,7 @@ class Actions
   {
     position.x = (random(4, 994));
     position.y = (random(4, 560));
+    
     if (((position.y < 100) || position.x > city1.position.x- 168 
           && position.y < city1.position.y + 100 
           && position.x < city1.position.x + 168 

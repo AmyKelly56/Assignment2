@@ -10,6 +10,7 @@ City city3;
 City city4;
 Customer customers;
 Destination location;
+Score score;
 /*Traffic car1;
 Traffic car2;
 Traffic car3;
@@ -70,6 +71,8 @@ void setup()
   action.add(car9);
   action.add(car10);
   */
+  
+   score = new Score(); 
 }
 
   
@@ -112,6 +115,7 @@ void draw()
         {
          customers.randomise();
          customer_destination.add(customers);
+         score.addScore();
         }
         customer_destination.remove(c);
         c.collected = false;
@@ -126,6 +130,7 @@ void draw()
       a.crash();
     }
   }
+  score.draw();
   
   if (taxi.working == false)
   {
