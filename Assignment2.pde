@@ -106,19 +106,27 @@ void draw()
         if (c.customer_destination == true)
         {
           location.randomise();
-          customer_deatination.add(location);
+          customer_destination.add(location);
         }
-        
-    
+        else if (c.customer_destination == false)
+        {
+         customers.randomise();
+         customer_destination.add(customers);
+        }
+        customer_destination.remove(c);
+        c.collected = false;
+        }
+     }
+     
+    for (Actions a : action)
+    {
+      a.draw();
+      a.update();
+      a.checkSides();
+      a.crash();
+    }
   }
   
-  for (Actions a : action)
-  {
-    a.draw();
-    a.update();
-    a.checkSides();
-  }
-    
   if (taxi.working == false)
   {
     action.remove(taxi);
@@ -126,6 +134,9 @@ void draw()
     action.remove(city2);
     action.remove(city3);
     action.remove(city4);
+    customer_destination.remove(customers);
+    customer_destination.remove(location);
+    
   }
 }
  
