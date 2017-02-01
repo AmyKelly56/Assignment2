@@ -1,6 +1,6 @@
 PFont f1,f2;
 ArrayList<Actions> action;
-ArrayList<Customer> customer_destination;
+ArrayList<Customer> customer_destination = new ArrayList<Customer>();
 
 MainMenu menu;
 TaxiCar taxi;
