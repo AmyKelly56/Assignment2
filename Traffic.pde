@@ -13,6 +13,9 @@ class Traffic extends Actions
   Traffic(int d0x, int d0y, int d1x, int d1y, int d2x, int d2y, int d3x, int d3y, int d4x, int d4y, int d5x, int d5y, 
           int s, float r, float g, float b) 
   {
+    this.r = r;
+    this.g = g;
+    this.b = b;
     rectMode(CENTER);
     velocity = new PVector(0, 0);
     position = new PVector();
@@ -79,6 +82,15 @@ class Traffic extends Actions
     }
   }
   
+  void crash()
+  {
+    distance = dist(taxi.position.x, taxi.position.y, position.x, position.y);
+    
+    if (distance < 23)
+    {
+      taxi.working = false;
+    }
+  } 
 }
  
   
