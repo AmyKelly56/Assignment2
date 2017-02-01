@@ -17,5 +17,5 @@ class Score
   {
     score += 100;
   }
-  
+}
   

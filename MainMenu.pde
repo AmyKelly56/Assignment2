@@ -1,5 +1,9 @@
 class MainMenu
 {
+  TaxiCar tc = new TaxiCar();
+  Customer c = new Customer();
+  Destination d = new Destination();
+  
   boolean game = false;
   float y = 1.0;
   
