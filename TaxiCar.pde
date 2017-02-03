@@ -18,7 +18,7 @@ class TaxiCar extends Actions
     pushMatrix();
     translate(position.x, position.y);
     rotate(-theta);
-    fill(#0AF21B);
+    fill(#FCFC03);
     rect(0, 0, 30, 15);
     fill(0);
     rect(0 + 8, 0 + 8, 10, 3);

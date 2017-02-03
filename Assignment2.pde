@@ -11,6 +11,7 @@ City city4;
 Customer customers;
 Destination location;
 Fuel fuel;
+GameOver gameOver;
 ReFuel reFuel;
 Score score;
 Traffic car1;
@@ -80,6 +81,7 @@ void setup()
   action.add(car10);
   action.add(fuel);
   
+  gameOver = GameOver();
   score = new Score(); 
 }
 
@@ -136,6 +138,7 @@ void draw()
       a.update();
       a.checkSides();
       a.crash();
+      a.reFuel();
     }
     
     if (reFuel.remove == true)
@@ -169,6 +172,13 @@ void draw()
     action.remove(fuel);
     customer_destination.remove(customers);
     customer_destination.remove(location);
+    
+    gameOver.expandGameOver();
+    textSize(40);
+    fill(32);
+    text("Game Over!\n Your Score: " + score.score, width/2 - 125, height/2 - 100);
+    
+   
     
   }
 }

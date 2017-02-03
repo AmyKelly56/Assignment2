@@ -35,5 +35,4 @@ class ReFuel extends Actions
     }
   }
 }
-   
-}
+ 
