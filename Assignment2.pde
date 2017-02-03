@@ -156,9 +156,8 @@ void draw()
         }
       }
     }
+    score.draw();
   }
-  score.draw();
-  
   if (taxi.working == false)
   {
     action.remove(taxi);
@@ -166,11 +165,18 @@ void draw()
     action.remove(city2);
     action.remove(city3);
     action.remove(city4);
+    action.remove(car1);
+    action.remove(car2);
+    action.remove(car3);
+    action.remove(car4);
+    action.remove(car5);
+    action.remove(car6);
+    action.remove(car7);
+    action.remove(car8);
     action.remove(fuel);
     customer_destination.remove(customers);
     customer_destination.remove(location);
-    
-    action.remove(car1);
+   
     
     gameOver.expandGameOver();
     textSize(40);

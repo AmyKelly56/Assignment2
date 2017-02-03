@@ -10,6 +10,7 @@ class City extends Actions
     fill(#5D471B); //<>//
     strokeWeight(0);
     //road
+    
     rect(position.x, position.y + 23, 325, 150);
     stroke(100);
     fill(80);
