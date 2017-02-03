@@ -82,7 +82,7 @@ void setup()
  
 void draw()
 {
-  
+
   background(#FA5503);
  
   //Game Menu
@@ -175,10 +175,13 @@ void draw()
     gameOver.expandGameOver();
     textSize(40);
     fill(32);
-    text("Game Over!\n Your Score: " + score.score, width/2 - 125, height/2 - 100);
+    text("Game Over!\n Your Score: " + score.score, width/2 - 125, height/2 - 160);
+    text("Press P to retrun\n to the home screen!", width/2 - 125, height/2);
     
-   
-    
+    if (key == 'p')
+    {
+      setup();
+    }  
   }
 }
  
