@@ -9,7 +9,7 @@ class GameOver
     textFont(f2);
     fill(#00ADFA);
     strokeWeight(2);
-    rect(500, y, y + 950, y + 50);
+    rect(500, y, y + 950, y);
     strokeWeight(1);
     
     textSize(50);

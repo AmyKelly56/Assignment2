@@ -1,3 +1,6 @@
+import ddf.minim.*;
+Minim minim;
+
 PFont f1,f2;
 ArrayList<Actions> action;
 ArrayList<Customer> customer_destination = new ArrayList<Customer>();
@@ -48,6 +51,8 @@ void setup()
   city2 = new  City(width - width/4 - 15, height - height/4 - 30);
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
+  fuel = new Fuel();
+  reFuel = new ReFuel();
   
  /* car1 = new Traffic();
   car2 = new Traffic();
@@ -69,6 +74,7 @@ void setup()
   action.add(city2);
   action.add(city3);
   action.add(city4);
+  /*
   action.add(car1);
   action.add(car2);
   action.add(car3);
@@ -79,9 +85,11 @@ void setup()
   action.add(car8);
   action.add(car9);
   action.add(car10);
+  */
   action.add(fuel);
   
-  gameOver = GameOver();
+  
+  gameOver = new GameOver();
   score = new Score(); 
 }
 
@@ -108,6 +116,7 @@ void draw()
     }
     
     background(#646362);
+    gameOver.draw();
     
     for(Customer c : customer_destination)
     {
@@ -134,11 +143,14 @@ void draw()
      
     for (Actions a : action)
     {
+      
       a.draw();
       a.update();
       a.checkSides();
       a.crash();
       a.reFuel();
+      
+      
     }
     
     if (reFuel.remove == true)

@@ -7,7 +7,7 @@ class City extends Actions
   
   void draw()
   {
-    fill(#5D471B);
+    fill(#5D471B); //<>//
     strokeWeight(0);
     //road
     rect(position.x, position.y + 23, 325, 150);
@@ -39,9 +39,9 @@ class City extends Actions
       strokeWeight(1);
       fill(255);
       rect(position.x - x, position.y + y, 4, 8);
-      rect(position.x - x, position.y + y + 12, 3, 7);
+      rect(position.x - x, position.y + y + 12, 3, 7); //<>//
       x -= 10;
-    }
+    } //<>//
   }
   
   void crash()
