@@ -14,11 +14,11 @@ class Fuel extends Actions
   void draw()
   {
     fill(255);
-    textFont(f2);
-    textSize(18);
-    text(s, width/2 + 340, 35);
+    textFont(f1);
+    textSize(30);
+    text(s, width/2 + 440, 35);
     fill(r, g, b);
-    rect(position.x, 65, fuel, 30);
+    rect(position.x + 150, 65, fuel, 30);
     counter++;
     
     if (counter == 10)

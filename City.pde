@@ -6,18 +6,22 @@ class City extends Actions
   }
   
   void draw()
-  {
-    //<>//
-    strokeWeight(0);
+  { //<>//
     //road
-    fill(#FFFFFF);
-    rect(width/2, height/2, 10, 50);
-    rect(width/2, height/2 - 80, 10, 50);
-    rect(width/2, height/2 - 160, 10, 50);
-    rect(width/2, height/2 - 230, 10, 50);
-    rect(width/2, height/2 - 290, 10, 27);
-    rect(width/2, height/2 - 230, 10, 50);
-    
+    int x = 130;
+    int y = 30;
+  
+    for (int i = 0; i < 16; i ++)
+    {
+      strokeWeight(2);
+      fill(255);
+      rect(width/2, 0 + x , 10, 50);
+      rect(0 + y, height/2 + 15, 50, 10);
+      
+      x += 90;
+      y += 81;
+    }
+
     fill(#5D471B);
     rect(position.x, position.y + 23, 325, 150);
     stroke(100);

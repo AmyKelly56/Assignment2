@@ -14,7 +14,7 @@ class GameOver
     
     textSize(50);
     fill(255);
-    text(GameOver, 400, 65);
+    text(GameOver, 550, 65);
     textSize(10);
   }
   
