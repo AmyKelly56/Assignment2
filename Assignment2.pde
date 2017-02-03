@@ -11,6 +11,7 @@ City city4;
 Customer customers;
 Destination location;
 Fuel fuel;
+ReFuel reFuel;
 Score score;
 Traffic car1;
 Traffic car2;
@@ -135,6 +136,25 @@ void draw()
       a.update();
       a.checkSides();
       a.crash();
+    }
+    
+    if (reFuel.remove == true)
+    {
+      reFuel.remove = false;
+      action.remove(reFuel);
+    }
+    if (reFuel.fuelStation == false)
+    {
+      if (fuel.fuel < 85)
+      {
+        reFuel.fuelStation = true;
+        
+        if (reFuel.fuelStation == true)
+        {
+          reFuel.randomise();
+          action.add(reFuel);
+        }
+      }
     }
   }
   score.draw();

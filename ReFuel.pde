@@ -20,5 +20,20 @@ class ReFuel extends Actions
     text(s, position.x, position.y);
   }
   
+  void crash()
+  {
+    distance = dist(taxi.position.x, taxi.position.y, position.x, position.y);
+    
+    if (distance < 24)
+    {
+      score.addScore();
+     fuel.fuel = 200;
+     fuel.r = 0;
+     fuel.g = 255;
+     fuelStation = false;
+     remove = true;
+    }
+  }
+}
    
 }
