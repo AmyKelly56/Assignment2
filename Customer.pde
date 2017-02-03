@@ -11,6 +11,7 @@ class Customer extends Actions
   
   void draw()
   {
+    line(0, 95, 1300, 94);
     fill(#FAF5DC);
     ellipse(position.x + 18, position.y -20, 40, 20);
     fill(#EA6826);

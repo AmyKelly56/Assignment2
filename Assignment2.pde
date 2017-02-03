@@ -39,42 +39,36 @@ void setup()
   textFont(f1);
   
   menu = new MainMenu();
-   
   customer_destination = new ArrayList<Customer>();
   customers = new Customer();
   location = new Destination();
   customer_destination.add(customers);
-  
   action = new ArrayList<Actions>();
   taxi = new TaxiCar();
+  fuel = new Fuel();
+  reFuel = new ReFuel();
+  score = new Score(); 
+  gameOver = new GameOver();
   city1= new City(width/4, height/4);
   city2 = new  City(width - width/4 - 15, height - height/4 - 30);
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
-  fuel = new Fuel();
-  reFuel = new ReFuel();
   
- /* car1 = new Traffic();
-  car2 = new Traffic();
-  car3 = new Traffic();
-  car4 = new Traffic();
-  car5 = new Traffic();
-  car6 = new Traffic();
-  car7 = new Traffic();
-  car8 = new Traffic();
-  car9 = new Traffic();
-  car10 = new Traffic();
+  car1 = new Traffic(260, 580, 445, 580, 445, 385, 70, 385, 71, 580, 25, random(0, 255), random(0, 255), random(0, 255));
+  car2 = new Traffic(261, 350, 445, 350, 445, 155, 70, 155, 71, 350, 30, random(0, 255), random(0, 255), random(0, 255));
+  car3 = new Traffic(661, 350, 555, 350, 555, 149, 931, 150, 931, 350, 25, random(0, 255), random(0, 255), random(0, 255));
+  car4 = new Traffic(661, 580, 555, 580, 555, 385, 931, 385, 931, 580, 20, random(0, 255), random(0, 255), random(0, 255));
+  car5 = new Traffic(445, 385, 70, 385, 71, 580, 260, 580, 445, 580, 25, random(0, 255), random(0, 255), random(0, 255));
+  car6 = new Traffic(445, 155, 70, 155, 71, 350, 261, 350, 445, 350, 30, random(0, 255), random(0, 255), random(0, 255));
+  car7 = new Traffic(555, 149, 931, 150, 931, 350, 661, 350, 555, 350, 25, random(0, 255), random(0, 255), random(0, 255)); 
+  car8 = new Traffic(555, 385, 931, 385, 931, 580, 661, 580, 555, 580, 20, random(0, 255), random(0, 255), random(0, 255));
   
-  */
-  
-
-  
+ 
   action.add(taxi);
   action.add(city1);
   action.add(city2);
   action.add(city3);
   action.add(city4);
-  /*
   action.add(car1);
   action.add(car2);
   action.add(car3);
@@ -83,17 +77,9 @@ void setup()
   action.add(car6);
   action.add(car7);
   action.add(car8);
-  action.add(car9);
-  action.add(car10);
-  */
   action.add(fuel);
-  
-  
-  gameOver = new GameOver();
-  score = new Score(); 
 }
-
-  
+ 
 void draw()
 {
   
@@ -120,6 +106,7 @@ void draw()
     
     for(Customer c : customer_destination)
     {
+      line(0, 95, 1300, 94);
       c.draw();
       c.crash();
       
@@ -149,8 +136,6 @@ void draw()
       a.checkSides();
       a.crash();
       a.reFuel();
-      
-      
     }
     
     if (reFuel.remove == true)
@@ -184,6 +169,8 @@ void draw()
     action.remove(fuel);
     customer_destination.remove(customers);
     customer_destination.remove(location);
+    
+    action.remove(car1);
     
     gameOver.expandGameOver();
     textSize(40);

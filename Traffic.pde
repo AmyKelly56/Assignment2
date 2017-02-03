@@ -1,6 +1,6 @@
 class Traffic extends Actions
 {
-  public ScorePoints[] points = new ScorePoints[6];
+  public ScorePoints[] points = new ScorePoints[5];
   PVector location;
   int p = 0;
   int x, y;
@@ -10,7 +10,7 @@ class Traffic extends Actions
   boolean saveX = false;
   boolean saveY = false;
   
-  Traffic(int d0x, int d0y, int d1x, int d1y, int d2x, int d2y, int d3x, int d3y, int d4x, int d4y, int d5x, int d5y, 
+  Traffic(int d0x, int d0y, int d1x, int d1y, int d2x, int d2y, int d3x, int d3y, int d4x, int d4y, 
           int s, float r, float g, float b) 
   {
     this.r = r;
@@ -26,7 +26,6 @@ class Traffic extends Actions
     points[2] = new ScorePoints(d2x, d2y);
     points[3] = new ScorePoints(d3x, d3y);
     points[4] = new ScorePoints(d4x, d4y);
-    points[5] = new ScorePoints(d5x, d5y);
   }
   
   void draw()
