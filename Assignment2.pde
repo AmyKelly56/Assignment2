@@ -10,6 +10,7 @@ City city3;
 City city4;
 Customer customers;
 Destination location;
+Fuel fuel;
 Score score;
 Traffic car1;
 Traffic car2;
@@ -76,6 +77,7 @@ void setup()
   action.add(car8);
   action.add(car9);
   action.add(car10);
+  action.add(fuel);
   
   score = new Score(); 
 }
@@ -144,6 +146,7 @@ void draw()
     action.remove(city2);
     action.remove(city3);
     action.remove(city4);
+    action.remove(fuel);
     customer_destination.remove(customers);
     customer_destination.remove(location);
     
