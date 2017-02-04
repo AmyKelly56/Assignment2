@@ -16,7 +16,7 @@ class ReFuel extends Actions
     ellipse(position.x + 4, position.y -5, 30, 30);
     fill(255);
     textFont(f2);
-    textSize(18);
+    textSize(20);
     text(s, position.x, position.y);
   }
   
@@ -26,7 +26,7 @@ class ReFuel extends Actions
     
     if (distance < 24)
     {
-      score.addScore();
+     score.subScore();
      fuel.fuel = 200;
      fuel.r = 0;
      fuel.g = 255;

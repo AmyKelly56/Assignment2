@@ -8,7 +8,7 @@ class Destination extends Customer
   void draw()
   {
     strokeWeight(0);
-    fill(#E82507);
+    fill(#FA9B03);
     ellipse(position.x, position.y, 50, 50);
     strokeWeight(1);
   }

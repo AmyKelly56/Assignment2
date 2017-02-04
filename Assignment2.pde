@@ -28,9 +28,6 @@ Traffic car8;
 Traffic car9; 
 Traffic car10;
 
-int SIZE = 45;
-
-
 void setup()
 {
   fullScreen();
@@ -54,6 +51,7 @@ void setup()
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
   
+
   car1 = new Traffic(260, 580, 445, 580, 445, 385, 70, 385, 71, 580, 25, random(0, 255), random(0, 255), random(0, 255));
   car2 = new Traffic(261, 350, 445, 350, 445, 155, 70, 155, 71, 350, 30, random(0, 255), random(0, 255), random(0, 255));
   car3 = new Traffic(661, 350, 555, 350, 555, 149, 931, 150, 931, 350, 25, random(0, 255), random(0, 255), random(0, 255));
@@ -106,7 +104,6 @@ void draw()
     
     for(Customer c : customer_destination)
     {
-      line(0, 95, 1300, 94);
       c.draw();
       c.crash();
       
@@ -176,15 +173,14 @@ void draw()
     action.remove(fuel);
     customer_destination.remove(customers);
     customer_destination.remove(location);
-   
-    
+  
     gameOver.expandGameOver();
     textSize(40);
     fill(32);
     text("Game Over!\n Your Score: " + score.score, width/2 - 125, height/2 - 160);
     text("Press R to Retrun\n to The Home Screen!", width/2 - 125, height/2);
     
-    if (key == 'p')
+    if (key == 'r')
     {
       setup();
     }  

@@ -9,12 +9,11 @@ class GameOver
     textFont(f2);
     fill(#00ADFA);
     strokeWeight(2);
-    rect(500, y, y + 950, y);
+    rect(500, y, y + 1600, y + 190);
     strokeWeight(1);
-    
     textSize(50);
     fill(255);
-    text(GameOver, 550, 65);
+    text(GameOver, 550, 50);
     textSize(10);
   }
   
