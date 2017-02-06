@@ -16,7 +16,7 @@ class Fuel extends Actions
     fill(255);
     textFont(f1);
     textSize(30);
-    text(s, width/2 + 440, 35);
+    text(s, width/2 + 480, 35);
     fill(r, g, b);
     rect(position.x + 150, 65, fuel, 30);
     counter++;
@@ -34,4 +34,3 @@ class Fuel extends Actions
     }
   }
 }
-  

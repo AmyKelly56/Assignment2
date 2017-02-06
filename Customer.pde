@@ -40,8 +40,7 @@ class Customer extends Actions
       
       if (customer_destination == true)
       {
-        customer_destination = false;
-        
+        customer_destination = false; 
       }
       else
       {
@@ -50,5 +49,3 @@ class Customer extends Actions
     }
   }
 }
-    
-  

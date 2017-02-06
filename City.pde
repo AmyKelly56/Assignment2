@@ -46,24 +46,24 @@ class City extends Actions
    }
    for (int i = 0; i<125; i+=6) 
    {
-    for (int f = 0; f<45; f+=10) {
-      rect(position.x - 20 + f, position.y - 60 + i, 6, 3);
-    } 
-  }
- 
-  for (int i = 0; i<125; i+=6) {
-    for (int f = 0; f<40; f+=10) {
-      rect(position.x + 65 +f, position.y - 60 +i, 6, 3);
-    }
+     for (int f = 0; f<45; f+=10) 
+     {
+       rect(position.x - 20 + f, position.y - 60 + i, 6, 3);
+     } 
+   }
+   for (int i = 0; i<125; i+=6) 
+   {
+     for (int f = 0; f<40; f+=10) 
+     {
+       rect(position.x + 65 +f, position.y - 60 +i, 6, 3);
+     }
+   }
+   for (int i = 0; i<100; i+=15) 
+   {
+     rect(position.x + 120, position.y - 35 +i, 10, 10);
+    } //<>// //<>//
   }
   
-  for (int i = 0; i<100; i+=15) {
-    rect(position.x + 120, position.y - 35 +i, 10, 10);
-  }
-  
- //<>// //<>//
-  }
-   
   void crash()
   {
     if (taxi.position.x > position.x - 159 && taxi.position.y < position.y + 93 && taxi.position.x < position.x + 159 && taxi.position.y > position.y - 59)

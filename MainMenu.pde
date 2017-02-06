@@ -1,10 +1,5 @@
 class MainMenu
 {
-  TaxiCar tc = new TaxiCar();
-  Customer c = new Customer();
-  Destination d = new Destination();
-  ReFuel f = new ReFuel();
-
   boolean game = false;
   float y = 3.0;
 
@@ -32,13 +27,12 @@ class MainMenu
       textFont(f2);
       textSize(30);
       fill(0);
-      text("Use Arrow Keys or A, W, S, D To Move The Taxi", width/2 - 290, height/2 - 100);
+      text("Use Arrow Keys or A, W, S, D To Move", width/2 - 290, height/2 - 100);
       text("Press Up Arrow Key To Go Faster And Down To Go Slower", width/2 - 360, height/2 - 50);
-      text("Avoid The Buldings and The Other Cars", width/2 - 300, height/2);
-      text("You Are The Taxi: ", width/2 - 200, height/2 + 50);
-      text("Collect The Customer: ", width/2 - 200, height/2 + 100);
-      text("Drop Them To Thier Destination: ", width/2 - 200, height/2 +150);
-      text("Dont Run Out Of Fuel: ", width/2 - 200, height/2 + 200);
+      text("Avoid The Buldings and Traffic", width/2 - 300, height/2);
+      text("Collect The Customer", width/2 - 200, height/2 + 50);
+      text("Drop Them To 2 Destinations", width/2 - 200, height/2 + 100);
+      text("Dont Run Out of Fuel", width/2 - 200, height/2 +150);
       text("Press Space To Begin", width/2 - 130, height/2 + 270);
     }
   }

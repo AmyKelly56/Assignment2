@@ -22,6 +22,7 @@ class Actions
   
   void update()
   {
+    
   }
   
   void crash()
