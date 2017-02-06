@@ -88,10 +88,8 @@ void setup()
  
 void draw()
 {
-
   background(#FA5503);
  
-  //Game Menu
   if (menu.game == false)
   {
     menu.logo();

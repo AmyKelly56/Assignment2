@@ -1,6 +1,6 @@
 class GameOver
 {
-  String GameOver = "Taxi Run";
+  String GameOver = "Taxi Pick Up";
   int x = 0;
   int y = 0;
   
@@ -13,7 +13,7 @@ class GameOver
     strokeWeight(1);
     textSize(50);
     fill(255);
-    text(GameOver, 550, 50);
+    text(GameOver, 500, 50);
     textSize(10);
   }
   

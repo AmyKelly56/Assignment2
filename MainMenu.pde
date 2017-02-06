@@ -36,13 +36,9 @@ class MainMenu
       text("Press Up Arrow Key To Go Faster And Down To Go Slower", width/2 - 360, height/2 - 50);
       text("Avoid The Buldings and The Other Cars", width/2 - 300, height/2);
       text("You Are The Taxi: ", width/2 - 200, height/2 + 50);
-      tc.menuScreen();
       text("Collect The Customer: ", width/2 - 200, height/2 + 100);
-      c.menuScreen();
       text("Drop Them To Thier Destination: ", width/2 - 200, height/2 +150);
-      d.menuScreen();
       text("Dont Run Out Of Fuel: ", width/2 - 200, height/2 + 200);
-      f.menuScreen();
       text("Press Space To Begin", width/2 - 130, height/2 + 270);
     }
   }
