@@ -8,7 +8,7 @@ class Destination extends Customer
   void draw()
   {
     strokeWeight(0);
-    fill(#FA9B03);
+    fill(random(255), random(255), random(255));
     ellipse(position.x, position.y, 50, 50);
     strokeWeight(1);
   }
@@ -34,13 +34,5 @@ class Destination extends Customer
         customers.customer_destination = true;
       }
     }
-  }
-  
-  void menuScreen()
-  {
-    strokeWeight(0);
-    fill(#FA9B03);
-    ellipse(position.x, position.y, 50, 50);
-    strokeWeight(1);
-  }    
+  } 
 }
