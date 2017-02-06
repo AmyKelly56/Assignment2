@@ -1,5 +1,8 @@
 import ddf.minim.*;
 Minim minim;
+AudioPlayer menuSong;
+AudioPlayer gameSong;
+AudioPlayer hornHonk;
 
 PFont f1,f2;
 ArrayList<Actions> action;
@@ -34,6 +37,11 @@ void setup()
   f1 = loadFont("freeversionSketchBlock-Bold-48.vlw");
   f2 = loadFont("orangejuice-48.vlw");
   textFont(f1);
+  
+  minim = new Minim(this);
+  menuSong = minim.loadFile("Fast_Motion.wav");
+  gameSong = minim.loadFile("Steppin'_Out.wav");
+  hornHonk = minim.loadFile("HornHonk.wav");
   
   menu = new MainMenu();
   customer_destination = new ArrayList<Customer>();
@@ -89,10 +97,12 @@ void draw()
     menu.logo();
     menu.update();
     menu.instrctions();
+    menuSong.play();
   }
   else if (menu.game == true)
   {
-    //
+    gameSong.play();
+    
     if (customers.startGame == true)
     {
       customers.randomise();
@@ -111,14 +121,18 @@ void draw()
       {
         if (c.customer_destination == true)
         {
+          hornHonk.play();
+          hornHonk.rewind();
           location.randomise();
           customer_destination.add(location);
         }
         else if (c.customer_destination == false)
         {
-         customers.randomise();
-         customer_destination.add(customers);
-         score.addScore();
+           hornHonk.play();
+           hornHonk.rewind();
+           customers.randomise();
+           customer_destination.add(customers);
+           score.addScore();
         }
         customer_destination.remove(c);
         c.collected = false;
@@ -171,6 +185,7 @@ void draw()
     action.remove(car7);
     action.remove(car8);
     action.remove(fuel);
+    action.remove(reFuel);
     customer_destination.remove(customers);
     customer_destination.remove(location);
   
@@ -182,6 +197,7 @@ void draw()
     
     if (key == 'r')
     {
+      minim.stop();
       setup();
     }  
   }
@@ -193,6 +209,7 @@ void keyPressed()
   {
     if (menu.game == false)
     {
+      menuSong.close();
       menu.game = true;
     }
   }
@@ -214,7 +231,7 @@ void keyPressed()
     }
     else
     {
-      taxi.speed *= 2.5;
+      taxi.speed *= 1.5;
       taxi.fast = true;
     }
   }
