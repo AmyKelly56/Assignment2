@@ -24,14 +24,6 @@ GameOver gameOver;
 ReFuel reFuel;
 Score score;
 
-Traffic car2;
-Traffic car3;
-Traffic car4; 
-Traffic car5;
-Traffic car6;
-Traffic car7;
-Traffic car8;
-
 void setup()
 {
   fullScreen();
@@ -63,54 +55,11 @@ void setup()
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
   
-  if(frameCount % 120 == 0)
-  {
-    int place = (int)random(1,4);
-    Traffic car1;
-    //color c = color(random(255), random(255), random(255);
-    
-    if(place == 1)
-    {
-      car1 = new Traffic(0, height/2, radians(90));
-    }
-    else if(place == 2)
-    {
-      car1 = new Traffic(width/2, 0, radians(180));
-    }
-    else if(place ==3)
-    {
-      car1 = new Traffic(width/2,  20, radians(270));
-    }
-    else 
-    {
-      car1 = new Traffic(width/2 + 80, 10, radians(0));
-    }
-    action.add(car1);
-  }
-  //car1 = new Traffic(260, 580, 445, 580, 445, 385, 70, 385, 71, 580, 25, random(0, 255), random(0, 255), random(0, 255));
-  //car2 = new Traffic(261, 350, 445, 350, 445, 155, 70, 155, 71, 350, 30, random(0, 255), random(0, 255), random(0, 255));
-  //car3 = new Traffic(661, 350, 555, 350, 555, 149, 931, 150, 931, 350, 25, random(0, 255), random(0, 255), random(0, 255));
-  //car4 = new Traffic(661, 580, 555, 580, 555, 385, 931, 385, 931, 580, 20, random(0, 255), random(0, 255), random(0, 255));
-  //car5 = new Traffic(445, 385, 70, 385, 71, 580, 260, 580, 445, 580, 25, random(0, 255), random(0, 255), random(0, 255));
-  //car6 = new Traffic(445, 155, 70, 155, 71, 350, 261, 350, 445, 350, 30, random(0, 255), random(0, 255), random(0, 255));
-  //car7 = new Traffic(555, 149, 931, 150, 931, 350, 661, 350, 555, 350, 25, random(0, 255), random(0, 255), random(0, 255)); 
-  //car8 = new Traffic(555, 385, 931, 385, 931, 580, 661, 580, 555, 580, 20, random(0, 255), random(0, 255), random(0, 255));
-  
   action.add(taxi);
   action.add(city1);
   action.add(city2);
   action.add(city3);
   action.add(city4);
-
-  /*
-  action.add(car2);
-  action.add(car3);
-  action.add(car4);
-  action.add(car5);
-  action.add(car6);
-  action.add(car7);
-  action.add(car8);
-  */
   action.add(fuel);
 }
  
@@ -202,14 +151,6 @@ void draw()
     action.remove(city2);
     action.remove(city3);
     action.remove(city4);
-    action.remove(car1);
-    action.remove(car2);
-    action.remove(car3);
-    action.remove(car4);
-    action.remove(car5);
-    action.remove(car6);
-    action.remove(car7);
-    action.remove(car8);
     action.remove(fuel);
     action.remove(reFuel);
     customer_destination.remove(customers);
@@ -227,6 +168,39 @@ void draw()
       minim.stop();
       setup();
     }  
+  }
+  
+  spawnTraffic();
+}
+
+void spawnTraffic()
+{
+  if(frameCount % 120 == 0)
+  {
+    int place = (int)random(0,5);
+    Traffic cars;
+    color c = color(random(255), random(255), random(255));
+    
+    if(place <=1)
+    {
+      cars = new Traffic(0, height/2 + 80, radians(0),c);
+      action.add(cars);
+    }
+    if(place == 2)
+    {
+      cars = new Traffic(width/2 - 80, +200, radians(270),c);
+      action.add(cars);
+    }
+    if(place == 3)
+    {
+      cars = new Traffic(width,  height/2 - 80, radians(180),c);
+      action.add(cars);
+    }
+    if(place >= 4) 
+    {
+      cars = new Traffic(width/2 + 80, height - 30, radians(90),c);
+      action.add(cars);
+    } 
   }
 }
  

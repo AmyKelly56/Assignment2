@@ -9,7 +9,7 @@ class TaxiCar extends Actions
   {
     rectMode(CENTER);
     velocity = new PVector (0, 0);
-    position = new PVector (width/2, height - 20);
+    position = new PVector (width/2, height/2);
     theta = 0.0f;
   }
   
@@ -41,8 +41,8 @@ class TaxiCar extends Actions
       theta -= 0.04;
     }
     
-    velocity.x = cos(-theta);
-    velocity.y = sin(-theta);
+    velocity.x = cos(theta);
+    velocity.y = -sin(theta);
     position.x += velocity.x * timeDelta * speed;
     position.y += velocity.y * timeDelta * speed;
     velocity.limit(1.5);
