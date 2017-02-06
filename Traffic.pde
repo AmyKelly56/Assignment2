@@ -3,29 +3,27 @@ class Traffic extends Actions
   public ScorePoints[] points = new ScorePoints[5];
   PVector location;
   int p = 0;
-  int x, y;
-  float r, g, b;
+  float x, y;
+  color c;
   float distance; 
   
   boolean saveX = false;
   boolean saveY = false;
   
-  Traffic(int d0x, int d0y, int d1x, int d1y, int d2x, int d2y, int d3x, int d3y, int d4x, int d4y, 
-          int s, float r, float g, float b) 
+  Traffic(float x, float y, float theta, color c) 
   {
-    this.r = r;
-    this.g = g;
-    this.b = b;
+    this.c = c;
     rectMode(CENTER);
     velocity = new PVector(0, 0);
-    position = new PVector();
-    theta = 0.0f;
+    position = new PVector(x, y);
+    this.theta = theta;
     speed = s;
     points[0] = new ScorePoints(d0x, d0y);
     points[1] = new ScorePoints(d1x, d1y);
     points[2] = new ScorePoints(d2x, d2y);
     points[3] = new ScorePoints(d3x, d3y);
     points[4] = new ScorePoints(d4x, d4y);
+    
   }
   
   void draw()
@@ -46,6 +44,15 @@ class Traffic extends Actions
   
   void update()
   {
+    if(postion.x > 300)
+    {
+      position.x = position.x + radians(90);
+    }
+    else
+    {
+      position.y = position.y - radians(90);
+    }
+    /*
     location = new PVector(points[p].points.x, points[p].points.y);
     velocity = PVector.sub(location, position);
     velocity.normalize();
@@ -79,6 +86,7 @@ class Traffic extends Actions
       saveX = false;
       saveY = false;
     }
+    */
   }
   
   void crash()
