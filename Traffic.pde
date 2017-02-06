@@ -3,6 +3,7 @@ class Traffic extends Actions
   float x, y;
   color c;
   float distance; 
+  float initialX, initialY;
   
   boolean saveX = false;
   boolean saveY = false;
@@ -33,8 +34,8 @@ class Traffic extends Actions
   
   void update()
   {
-    
-    if(position.x < 0 || position.x > width || position.y < 0 || position.y > height)
+   
+    if((position.x < 0 || position.x > width || position.y < 0 || position.y > height))
     {
       action.remove(this);
     }

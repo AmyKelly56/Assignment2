@@ -181,27 +181,28 @@ void spawnTraffic()
     Traffic cars;
     color c = color(random(255), random(255), random(255));
     
+    
     if(place <=1)
     {
-      cars = new Traffic(0, height/2 + 80, radians(0),c);
+      cars = new Traffic(0, height/2 + 80, radians(0), c);
       action.add(cars);
     }
     if(place == 2)
     {
-      cars = new Traffic(width/2 - 80, +200, radians(270),c);
+      cars = new Traffic(width/2 - 80, + 200, radians(270), c);
       action.add(cars);
     }
     if(place == 3)
     {
-      cars = new Traffic(width,  height/2 - 80, radians(180),c);
+      cars = new Traffic(width,  height/2 - 80, radians(180), c);
       action.add(cars);
     }
     if(place >= 4) 
     {
-      cars = new Traffic(width/2 + 80, height - 30, radians(90),c);
+      cars = new Traffic(width/2 + 80, height - 30, radians(90), c);
       action.add(cars);
     } 
-  }
+  }  
 }
  
 void keyPressed()

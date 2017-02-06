@@ -6,7 +6,7 @@ class City extends Actions
   }
   
   void draw()
-  { //<>//
+  { //<>// //<>//
     int x = 130;
     int y = 30;
   
@@ -61,7 +61,7 @@ class City extends Actions
    for (int i = 0; i<100; i+=15) 
    {
      rect(position.x + 120, position.y - 35 +i, 10, 10);
-    } //<>// //<>//
+    } //<>// //<>// //<>//
   }
   
   void crash()
