@@ -66,21 +66,5 @@ class TaxiCar extends Actions
     {
       position.x = 0;
     }
-  } 
-  
-  void menuScreen()
-  {
-    fill(#f8e281);
-    rect (width/2 + 50, height/2 - 8, 30, 15);
-    fill (0);
-    rect (width/2 + 58, height/2, 10, 3);
-    rect (width/2 +42, height/2, 10, 3);
-    rect (width/2 +42, height/2 - 16, 10, 3);
-    rect (width/2 +58, height/2 - 16, 10, 3);
-    fill(200);     
-    rect (width/2 + 50, height/2 - 8, 3, 10);
-  
-    
-  }
-  
+  }   
 }

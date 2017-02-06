@@ -22,5 +22,4 @@ class Score
   {
     score -= 25;
   }
-}
-  
+}  

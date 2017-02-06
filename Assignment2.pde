@@ -28,8 +28,6 @@ Traffic car5;
 Traffic car6;
 Traffic car7;
 Traffic car8;
-Traffic car9; 
-Traffic car10;
 
 void setup()
 {
@@ -59,7 +57,6 @@ void setup()
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
   
-
   car1 = new Traffic(260, 580, 445, 580, 445, 385, 70, 385, 71, 580, 25, random(0, 255), random(0, 255), random(0, 255));
   car2 = new Traffic(261, 350, 445, 350, 445, 155, 70, 155, 71, 350, 30, random(0, 255), random(0, 255), random(0, 255));
   car3 = new Traffic(661, 350, 555, 350, 555, 149, 931, 150, 931, 350, 25, random(0, 255), random(0, 255), random(0, 255));
@@ -69,7 +66,6 @@ void setup()
   car7 = new Traffic(555, 149, 931, 150, 931, 350, 661, 350, 555, 350, 25, random(0, 255), random(0, 255), random(0, 255)); 
   car8 = new Traffic(555, 385, 931, 385, 931, 580, 661, 580, 555, 580, 20, random(0, 255), random(0, 255), random(0, 255));
   
- 
   action.add(taxi);
   action.add(city1);
   action.add(city2);
@@ -92,6 +88,7 @@ void draw()
  
   if (menu.game == false)
   {
+    menu.draw();
     menu.logo();
     menu.update();
     menu.instrctions();
@@ -139,7 +136,6 @@ void draw()
      
     for (Actions a : action)
     {
-      
       a.draw();
       a.update();
       a.checkSides();
