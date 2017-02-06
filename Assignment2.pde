@@ -54,7 +54,7 @@ void setup()
   reFuel = new ReFuel();
   score = new Score(); 
   gameOver = new GameOver();
-  city1= new City(width/4, height/4);
+  city1= new City(width/4, height/4 + 70);
   city2 = new  City(width - width/4 - 15, height - height/4 - 30);
   city3 = new City(width/4 + 5, height - height/4 - 30);
   city4 = new City(width - width/4 - 15, height/4 + 70);
